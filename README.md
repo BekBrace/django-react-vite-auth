@@ -49,7 +49,7 @@ Follow these steps to set up the project locally:
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:BekBrace/Django_React_Vite_Auth.git
+   git clone 
    cd your-project
 
 cd backend
