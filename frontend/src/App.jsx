@@ -1,10 +1,10 @@
 import React from "react";
 import Cookies from "universal-cookie";
 
+//instantiating Cookies class by creating cookies object
 const cookies = new Cookies();
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -20,24 +20,29 @@ class App extends React.Component {
     this.getSession();
   }
 
+// Get Session Method
   getSession = () => {
+    //// Make a GET request to the "/api/session/" URL with "same-origin" credentials
     fetch("/api/session/", {
       credentials: "same-origin",
     })
-    .then((res) => res.json())
+    .then((res) => res.json()) //// Parse the response as JSON
     .then((data) => {
-      console.log(data);
+      console.log(data); // Log the response data to the console
+      //// If the response indicates the user is authenticated
       if (data.isAuthenticated) {
-        this.setState({isAuthenticated: true});
-      } else {
-        this.setState({isAuthenticated: false});
+        this.setState({isAuthenticated: true}); // Update the component's state
+      } else {  // If the response indicates the user is not authenticated
+        this.setState({isAuthenticated: false}); // Update the component's state
       }
     })
+      //// Handle any errors that occurred during the fetch
     .catch((err) => {
       console.log(err);
     });
   }
-
+  
+//Who Am I method
   whoami = () => {
     fetch("/api/whoami/", {
       headers: {
@@ -70,8 +75,10 @@ class App extends React.Component {
     }
   }
 
+  //Login Mthod
   login = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission behavior
+     // Make a POST request to the "/api/login/" URL with the form data
     fetch("/api/login/", {
       method: "POST",
       headers: {
@@ -92,6 +99,7 @@ class App extends React.Component {
     });
   }
 
+  //Logout Method
   logout = () => {
     fetch("/api/logout", {
       credentials: "same-origin",
@@ -106,6 +114,8 @@ class App extends React.Component {
     });
   };
 
+
+  // UI Rendering using bootstrap 
   render() {
     if (!this.state.isAuthenticated) {
       return (
