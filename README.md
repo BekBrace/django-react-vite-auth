@@ -47,3 +47,28 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/your-username/your-project.git
    cd your-project
+
+cd backend
+python -m venv venv
+source venv/bin/activate  # Activate the virtual environment
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser  # Create an admin user (optional)
+python manage.py runserver
+
+cd frontend
+npm install
+npm run dev
+
+Configuration
+Configure your Django project settings, such as database settings, secret key, and allowed hosts, in the backend/settings.py file.
+
+For session-based authentication, ensure that Django's authentication settings are configured correctly, including the SESSION_COOKIE_SECURE setting for production.
+
+Customize your authentication views, such as login and logout views, as needed in the backend/views.py file.
+
+Usage
+Access the Django admin interface at http://localhost:8000/admin/ to manage users and other data (if you created a superuser).
+Visit the frontend application at http://localhost:3000/ to interact with the React-based user interface.
+Contributing
+Contributions are welcome! Please follow the guidelines outlined in CONTRIBUTING.md for reporting issues, suggesting improvements, and submitting pull requests.
