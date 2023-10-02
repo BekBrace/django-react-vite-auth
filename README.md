@@ -3,6 +3,7 @@ Django Serving up React application produced in Vite for session based authentic
 A web application template built with Django, React, and Vite, featuring session-based authentication.
 
 This is part of my YouTube Channel [BekBrace] project.
+
 Code in the repo is provided for both the frontend and the backend
 
 ## Table of Contents
