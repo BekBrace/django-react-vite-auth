@@ -1,6 +1,6 @@
 # Django Session-Based Authentication with React and Vite Tutorial
 
-| Made for the Bek Brace Tutorial - programmed October 27th, 2024 |  
+## | Made for the Bek Brace Tutorial - programmed October 27th, 2024 |  
 
 Welcome to our comprehensive tutorial on building a secure web authentication system using Django, React, and Vite. In this tutorial, we'll guide you through the process of creating a robust session-based authentication system and discuss essential security concepts.
 
